@@ -93,9 +93,10 @@ _m.solve(disp=True)
 ## Things to Keep in Mind
 1. Use ** for powers (e.g., write x**2 instead of x^2)
 2. Always use * for multiplication, even between variables or constants (e.g., a*b instead of ab)
-3. You can define constants with arithmetic expressions in the _Coefficients.txt file (e.g., z = 100 + 23*9)
-4. Variable and constant names can be any combination of letters and may include leading or trailing underscores
-5. If there's an error or no solution is found, it will be printed in the terminal, not in the _Answers.txt file how to write this part's code 
+3. Always use exp instead of e in Equations (e.g., exp(g) instead of e**g or exp **g)
+4. You can define constants with arithmetic expressions in the _Coefficients.txt file (e.g., z = 100 + 23*9)
+5. Variable and constant names can be any combination of letters and may include leading or trailing underscores
+6. If there's an error or no solution is found, it will be printed in the terminal, not in the _Answers.txt file how to write this part's code 
 
 
 ## References

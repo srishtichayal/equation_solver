@@ -33,7 +33,7 @@ Write your equations in _Equations.txt file and execute the code_runner.py file.
 
 To execute code runner file
 ```
-python code_runner.py --equations=<name of file with equations> --answers=<file where answers are printed> --constants=<file where constant values are stored>
+python code_runner.py
 ```
 You can expect the answer now in _Answer.txt file.
 
@@ -90,12 +90,13 @@ To
 _m.solve(disp=True)
 ```
 
-## Limitations
-1. You have to replace constants with the constant value.
-2. You have to replace the power operator with the ** operator.
-3. In case of no solution, the error would be printed in the terminal and not reflected in the _Answer.txt file.
-<hr>
-I tried covering all the corner cases while inputting the equations, but there might be some cases that I might have missed. Please feel free to raise an issue if you find any.
+## Things to Keep in Mind
+1. Use ** for powers (e.g., write x**2 instead of x^2)
+2. Always use * for multiplication, even between variables or constants (e.g., a*b instead of ab)
+3. You can define constants with arithmetic expressions in the _Coefficients.txt file (e.g., z = 100 + 23*9)
+4. Variable and constant names can be any combination of letters and may include leading or trailing underscores (e.g., _z_, __z__)
+5. If there's an error or no solution is found, it will be printed in the terminal, not in the _Answers.txt file how to write this part's code 
+
 
 ## References
 [Github - Ipopt](https://coin-or.github.io/Ipopt/)  

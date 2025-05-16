@@ -61,7 +61,7 @@ __z__=-100+9*23
 
 You run the code with
 ```
-python code_runner.py --equations=<name of file with equations> --answers=<file where answers are printed> --constants=<file where constant values are stored>
+python code_runner.py 
 ```
 The answer now reflects in _Answers.txt file
 ```
@@ -94,7 +94,7 @@ _m.solve(disp=True)
 1. Use ** for powers (e.g., write x**2 instead of x^2)
 2. Always use * for multiplication, even between variables or constants (e.g., a*b instead of ab)
 3. You can define constants with arithmetic expressions in the _Coefficients.txt file (e.g., z = 100 + 23*9)
-4. Variable and constant names can be any combination of letters and may include leading or trailing underscores (e.g., _z_, __z__)
+4. Variable and constant names can be any combination of letters and may include leading or trailing underscores
 5. If there's an error or no solution is found, it will be printed in the terminal, not in the _Answers.txt file how to write this part's code 
 
 

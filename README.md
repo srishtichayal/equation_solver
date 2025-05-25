@@ -20,25 +20,42 @@ It is designed to exploit 1st and 2nd Hessian transformations, if provided other
 
 The Ipopt package is available from COIN-OR under the EPL (Eclipse Public License) open-source license and includes the source code for Ipopt. This means, it is available free of charge, also for commercial purposes. 
 
-## How to use
-Requirements are:
-- Gekko
-- Sympy
-### Setup
-Install requirements 
+## Setup
+Install required dependencies using:
 ```
 pip install -r requirements.txt
 ```
-Write your equations in _Equations.txt file and execute the code_runner.py file.
 
-To execute code runner file
+## Usage 
+### Interactive Web App
+A Flask interface is included to let you interactively
+- Edit your equations and constants
+- Upload .txt files from your local machine
+- View and download the computed answers
+To launch the app:
+'''
+python app.py
+'''
+Then open the link shown in your terminal (usually http://127.0.0.1:5000/)
+
+### Command Line Execution
+If you prefer, you can run the equation solver directly via:
 ```
 python code_runner.py
 ```
-You can expect the answer now in _Answer.txt file.
+Options:
+-> --solver: Lets you choose the solver to use: scipy or gekko (Required)
+-> --equations: Lets you add Path(s) to your Equation text file(s) (Required)
+-> --constants: Lets you add a Path to your constants/coefficients text file (Optional)
+-> --answers: Lets you add a Path to a directory for the output file(_Answers.txt) (Optional, defaults to current directory)
 
-### Example usage
-This is the _Equations.txt file
+### Example 
+This implementation supports multiple equation files, allowing you to solve interdependent systems of equations, where the output of one is used in the next.
+##### Important:
+-> If you're using the Flask interface, upload the equation files in the desired sequence.
+-> If you're running from the command line, provide the equation files in the required order as arguments to --equations.
+
+Suppose you have an equations file named _Equations.txt file in your current directory. 
 ```
 5-z*abc+23*9*b-23*20*abc**2+23*20*b**2 = 0
 100*abc-z*b+23*9*c-23*20*b**2+23*20*c**2 = 0
@@ -51,8 +68,7 @@ This is the _Equations.txt file
 100*h-_z_*i-9*10*j-20*10*i**2-20*10*j**2 = 0
 100*i-_z_*j-20*10*j**2 = 0
 ```
-- In this implementation, we can specify coefficient values in a separate text file (_Coefficients.txt) 
-- For example,
+Suppose you have a file named _Coefficients.txt having the constants in your current directory 
 ```
 z=100+23*9
 _z_=100+9*10
@@ -61,9 +77,9 @@ __z__=-100+9*23
 
 You run the code with
 ```
-python code_runner.py 
+python code_runner.py --solver gekko --equations _Equations.txt --constants _Coefficients.txt
 ```
-The answer now reflects in _Answers.txt file
+The answer now reflects in _Answers.txt file in your current directory since --answers was not specified
 ```
 Total time: 0.6498932838439941 seconds
 i = -7.7073075802e-05
@@ -76,19 +92,8 @@ b = 0.010341116978
 f = -0.00010933152706
 abc = 0.022650801207
 j = -4.0566497419e-05
+```
 
-```
-### Extras
-To get the code to show the optimization method use, just change the following in gekko_solver.py (line number 56)
-<br>
-From
-```
-_m.solve(disp=False)
-```
-To
-```
-_m.solve(disp=True)
-```
 
 ## Things to Keep in Mind
 1. Use ** for powers (e.g., write x**2 instead of x^2)
@@ -96,7 +101,6 @@ _m.solve(disp=True)
 3. Always use exp instead of e in Equations (e.g., exp(g) instead of e**g or exp **g)
 4. You can define constants with arithmetic expressions in the _Coefficients.txt file (e.g., z = 100 + 23*9)
 5. Variable and constant names can be any combination of letters and may include leading or trailing underscores
-6. If there's an error or no solution is found, it will be printed in the terminal, not in the _Answers.txt file how to write this part's code 
 
 
 ## References

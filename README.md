@@ -33,9 +33,9 @@ A Flask interface is included to let you interactively
 - Upload .txt files from your local machine
 - View and download the computed answers
 To launch the app:
-'''
+```
 python app.py
-'''
+```
 Then open the link shown in your terminal (usually http://127.0.0.1:5000/)
 
 ### Command Line Execution

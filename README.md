@@ -31,7 +31,7 @@ pip install -r requirements.txt
 A Flask interface is included to let you interactively
 - Edit your equations and constants
 - Upload .txt files from your local machine
-- View and download the computed answers
+- View and download the computed answers //
 To launch the app:
 ```
 python app.py

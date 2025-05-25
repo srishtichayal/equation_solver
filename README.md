@@ -44,16 +44,16 @@ If you prefer, you can run the equation solver directly via:
 python code_runner.py
 ```
 Options:
--> --solver: Lets you choose the solver to use: scipy or gekko (Required)
--> --equations: Lets you add Path(s) to your Equation text file(s) (Required)
--> --constants: Lets you add a Path to your constants/coefficients text file (Optional)
--> --answers: Lets you add a Path to a directory for the output file(_Answers.txt) (Optional, defaults to current directory)
+- --solver: Lets you choose the solver to use: scipy or gekko (Required)
+- --equations: Lets you add Path(s) to your Equation text file(s) (Required)
+- --constants: Lets you add a Path to your constants/coefficients text file (Optional)
+- --answers: Lets you add a Path to a directory for the output file(_Answers.txt) (Optional, defaults to current directory)
 
 ### Example 
 This implementation supports multiple equation files, allowing you to solve interdependent systems of equations, where the output of one is used in the next.
 ##### Important:
--> If you're using the Flask interface, upload the equation files in the desired sequence.
--> If you're running from the command line, provide the equation files in the required order as arguments to --equations.
+- If you're using the Flask interface, upload the equation files in the desired sequence.
+- If you're running from the command line, provide the equation files in the required order as arguments to --equations.
 
 Suppose you have an equations file named _Equations.txt file in your current directory. 
 ```

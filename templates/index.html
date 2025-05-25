@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equation Solver</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Equation Solver</h1>
+
+    <label for="solver">Solver:</label>
+    <select id="solver">
+        <option value="gekko">GEKKO</option>
+        <option value="scipy">SciPy</option>
+    </select><br><br>
+
+    <label for="equationFiles">Upload System of Equations File(s):</label>
+    <input type="file" id="equationFiles" accept=".txt" multiple><br><br>
+
+    <label for="equations">Equations (Use "---" to separate Multiple System of Equations):</label><br>
+    <textarea id="equations" rows="20" cols="90"></textarea><br><br>
+
+    <label for="constantsFile">Upload Constants File (Optional):</label>
+    <input type="file" id="constantsFile" accept=".txt"><br><br>
+
+    <label for="constants">Constants:</label><br>
+    <textarea id="constants" rows="10" cols="90"></textarea><br><br>
+
+    <button id="solveBtn">Solve</button>
+
+    <h3>Solution:</h3>
+    <pre id="solutionBox" style="background-color:#f0f0f0;padding:10px;border:1px solid #ccc;"></pre>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
